@@ -4,4 +4,6 @@
   hosts: all
   become: true
   roles:
-    - secondrole
+    - role: secondrule
+      vars:
+        webserver_type: apache
