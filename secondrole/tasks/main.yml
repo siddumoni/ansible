@@ -1,6 +1,13 @@
 ---
 # tasks file for secondrole
-- name : Update cache
+- name: Remove nginx cleanly (if broken)
+  ansible.builtin.apt:
+    name: "{{ webserver_packages[webserver_type] }}"
+    state: absent
+    purge: yes
+    force_apt_get: yes
+
+- name: Clean apt cache
   ansible.builtin.apt:
     update_cache: yes
 
