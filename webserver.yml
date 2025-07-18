@@ -1,0 +1,7 @@
+---
+# install web server
+- name: Install web server
+  hosts: all
+  become: true
+  roles:
+    - secondrole
