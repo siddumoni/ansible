@@ -1,2 +1,6 @@
 ---
 # vars file for secondrole
+
+webserver_packages:
+  nginx: nginx
+  apache: apache2

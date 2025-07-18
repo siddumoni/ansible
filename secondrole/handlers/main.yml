@@ -1,2 +1,6 @@
 ---
 # handlers file for secondrole
+- name: restart_webserver
+  ansible.builtin.service:
+    name : "{{ webserver_packages[webserver_type] }}"
+    state: restarted

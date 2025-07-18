@@ -1,2 +1,17 @@
 ---
 # tasks file for secondrole
+- name : Update cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install web server
+  ansible.builtin.apt:
+    name: "{{ webserver_packages[webserver_type] }}"
+    state: present
+    
+- name: Start web server
+  ansible.builtin.service:
+    name: "{{ webserver_packages[webserver_type] }}"
+    state: started
+    enabled: yes
+  notify: restart_webserver
