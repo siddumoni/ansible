@@ -8,6 +8,7 @@
   ansible.builtin.apt:
     name: "{{ webserver_packages[webserver_type] }}"
     state: present
+    force_apt_get: yes
     
 - name: Start web server
   ansible.builtin.service:
