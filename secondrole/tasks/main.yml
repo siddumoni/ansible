@@ -22,4 +22,7 @@
     name: "{{ webserver_packages[webserver_type] }}"
     state: started
     enabled: yes
+
+- name: Dummy change to force restart
+  ansible.builtin.command: echo "forcing restart"
   notify: restart_webserver
